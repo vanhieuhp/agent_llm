@@ -10,14 +10,14 @@ def send_email_tool(subject: str, text_body: str, html_body: str) -> str:
 
     :param subject:  the subject of the email
     :param text_body:  the body of the email
-    :param html_body: htmled version of the body
+    :param html_body: html version of the body
     """
 
     send_email(subject, text_body, html_body)
     return "Email sent successfully."
 
 INSTRUCTIONS = """
-You are provided with a detailed report. use your tool to send an email, converting the report into c clean,
+You are provided with a detailed report. use your tool to send an email, converting the report into a clean,
 well presented HTML email with an appropriate subject line.
 """
 

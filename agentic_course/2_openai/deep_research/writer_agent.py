@@ -1,4 +1,4 @@
-from agents import Runner, Agent
+from agents import Agent
 from pydantic import BaseModel, Field
 
 INSTRUCTIONS = """
@@ -9,16 +9,11 @@ The final output should be in markdown format, and it should be lengthy and deta
 for 5 -10 pages of content, at least 1000 words.
 """
 
+
 class ReportData(BaseModel):
     short_summary: str = Field(description="A short 2-3 sentence summary of the findings.")
     markdown_report: str = Field(description="The final report")
     follow_up_questions: list[str] = Field(description="Suggested topics to research further")
 
+
 writer_agent = Agent(name="Writer Agent", instructions=INSTRUCTIONS, model="gpt-5.4-mini", output_type=ReportData)
-
-
-async def write_report(query: str, search_results: list[str]):
-    print(f"Thinking about report...")
-    input_message = f"Original query: {query}\n\nResearch: {search_results}"
-    result = await Runner.run(writer_agent, input_message)
-    return result.final_output

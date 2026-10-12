@@ -1,10 +1,8 @@
 import os
-import asyncio
 import smtplib
 from email.message import EmailMessage
 
 import requests
-from aiohttp import payload
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
@@ -35,6 +33,7 @@ def send_email(subject, text_body, html_body):
         smtp.starttls()
         smtp.login(EMAIL_USERNAME, EMAIL_PASSWORD)
         smtp.send_message(msg)
+
 
 def push(message):
     print(f"Pushing message to Pushover: {message}")
