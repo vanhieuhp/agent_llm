@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-MODEL_NAME = os.getenv("DEEPSEEK_MODEL")
-
 EMAIL_SMTP_SERVER = os.getenv("EMAIL_SMTP_SERVER")
 EMAIL_SMTP_PORT = os.getenv("EMAIL_SMTP_PORT")
 EMAIL_USERNAME = os.getenv("EMAIL_USERNAME")

@@ -6,7 +6,7 @@ from messeger import send_email
 @function_tool
 def send_email_tool(subject: str, text_body: str, html_body: str) -> str:
     """
-    Send out an email with the given subject and body to all sales prospects
+    Send out an email with the given subject and body
 
     :param subject:  the subject of the email
     :param text_body:  the body of the email
