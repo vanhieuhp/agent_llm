@@ -30,8 +30,9 @@ dependencies = [
     "requests>=2.33.1",
     "rich>=15.0.0",
     "strands-agents[openai]>=1.43.0",
+    "tools>=1.0.38",
     "uvicorn[standard]>=0.46.0",
-    "wikipedia>=1.4.0"
+    "wikipedia>=1.4.0",
 ]
 
 [dependency-groups]
